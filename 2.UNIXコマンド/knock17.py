@@ -1,3 +1,7 @@
+import sys
+import io
+
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding = 'utf-8')
 inputFile = "popular-names.txt"
 firstColList = []
 with open(inputFile, "r", encoding = "utf-8") as file:
