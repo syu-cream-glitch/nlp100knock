@@ -16,3 +16,6 @@ for i in range(N):
         outFile.writelines(lines[i * splitInformation : (i + 1) * splitInformation])
 
 #実行確認$ split -l 10 2.UNIXコマンド/popular-names.txt output/output15_
+#実行確認$ split -l 278 2.UNIXコマンド/popular-names.txt output/output15_
+#一回行数を確認して，分割数を決める必要がある．
+#manコマンドでオプションを確認できる．
