@@ -46,7 +46,7 @@ doc_freq = collections.Counter()
 japan_noun_freq = collections.Counter()
 
 # nlp.pipeでまとめて形態素解析 → 高速化
-for doc, title in zip(nlp.pipe(texts_to_process, batch_size=200), titles_to_process):
+for doc, title in zip(nlp.pipe(texts_to_process, batch_size=50), titles_to_process):
     doc_nouns = set()
     for token in doc:
         if token.pos_ == "NOUN":

@@ -48,7 +48,7 @@ with gzip.open(input_file, "rt", encoding="utf-8") as f:
 # -------------------------
 # nlp.pipeでまとめて解析（高速化）
 # -------------------------
-for doc in nlp.pipe(texts_to_process, batch_size=200):
+for doc in nlp.pipe(texts_to_process, batch_size=50):
     counter.update([token.lemma_ for token in doc if token.is_alpha])
 
 # -------------------------
@@ -70,4 +70,4 @@ plt.xlabel("Rank (log)")
 plt.ylabel("Frequency (log)")
 plt.title("Word Frequency vs Rank (Log-Log)")
 plt.grid(True, which="both", ls="--")
-plt.show()
+plt.savefig(os.path.join("output", "word_frequency_rank.png"))

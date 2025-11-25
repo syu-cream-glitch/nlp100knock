@@ -38,8 +38,7 @@ with gzip.open(input_file, "rt", encoding="utf-8") as f:
             texts_to_process.append(chunk)
 
 # nlp.pipeでまとめて形態素解析 → 高速化
-for doc in nlp.pipe(texts_to_process, batch_size=200):
-    # 名詞だけをカウント
+for doc in nlp.pipe(texts_to_process, batch_size=50):
     counter.update([token.lemma_ for token in doc])
 
 # 上位20語を出力
