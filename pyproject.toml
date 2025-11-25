@@ -5,7 +5,10 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "ginza>=5.2.0",
+    "ja-ginza>=5.2.0",
     "matplotlib>=3.10.7",
     "numpy>=2.3.5",
     "requests>=2.32.5",
+    "spacy>=3.8.11",
 ]
