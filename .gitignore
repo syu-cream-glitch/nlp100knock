@@ -1,0 +1,2 @@
+#GEMINI_API_KEYを含む.envファイルを無視する
+.env
