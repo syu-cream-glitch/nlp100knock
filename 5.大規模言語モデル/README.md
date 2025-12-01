@@ -10,9 +10,6 @@
 ```bash
 uv add google-generativeai python-dotenv
 ```
-```bash
-uv sync
-```
 3. .envファイルにapiキーを設定
 ```bash
 GEMINI_API_KEY=あなたのAPIキー
