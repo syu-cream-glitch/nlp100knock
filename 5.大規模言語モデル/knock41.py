@@ -37,7 +37,7 @@ questions_example = [
     "解答: ウ→ア→イ",
 
     "\n問題:\n",
-    question,
+    f"{question}",
     "解答:"
 ]
 
