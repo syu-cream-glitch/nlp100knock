@@ -1,2 +1,2 @@
-#GEMINI_API_KEYを含む.envファイルを無視する
+#GEMINI_API_KEY，W2V_MODEL_PATHを含む.envファイルを無視する
 .env
