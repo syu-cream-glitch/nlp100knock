@@ -8,7 +8,6 @@ from scipy.cluster.hierarchy import linkage, dendrogram
 import matplotlib.pyplot as plt
 
 os.makedirs("output", exist_ok=True)
-output_file = os.path.join("output", "output57.txt")
 
 countries = [country.name.replace(" ", "_") for country in pycountry.countries]
 
