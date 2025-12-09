@@ -1,0 +1,1 @@
+semantic analogy accuracy: 421/505 = 0.8336633663366336
