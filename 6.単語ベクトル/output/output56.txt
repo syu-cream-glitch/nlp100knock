@@ -1,0 +1,3 @@
+                   Human (mean)  cosine_similarity
+Human (mean)           1.000000           0.700017
+cosine_similarity      0.700017           1.000000
