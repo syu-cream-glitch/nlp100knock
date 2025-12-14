@@ -40,4 +40,7 @@ X_new = vec_loaded.transform([dev_data[0]['feature']])
 y_pred = lr_loaded.predict(X_new)
 
 with open(output_file, "w", encoding="utf-8") as output_f:
-    output_f.write(f"Predicted label:{y_pred[0]}")
+    if y_pred[0] == dev_data[0]['label']:
+        output_f.write(f"Predicted label:{y_pred[0]},true")
+    else:
+        output_f.write(f"Predicted label:{y_pred[0]},false")

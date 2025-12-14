@@ -1,1 +1,1 @@
-Predicted label:1
+Predicted label:1,true
