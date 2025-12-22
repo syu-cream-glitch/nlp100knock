@@ -6,3 +6,6 @@
 
 # Fashion-MNISTはファイルサイズが大きいため、Git 管理対象外とする．
 **/FashionMNIST/
+
+# img_fashionディレクトリはファイルサイズが大きいため、Git 管理対象外とする．
+**/img_fashion/
