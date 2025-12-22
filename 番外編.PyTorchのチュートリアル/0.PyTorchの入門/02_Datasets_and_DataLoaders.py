@@ -84,12 +84,12 @@ class CustomImageDataset(Dataset): # 独自のデータセットクラスを定�
 # custom_dataloader = DataLoader(custom_dataset, batch_size=64, shuffle=True)
 
 # DataLoaderの使用
-# from torch.utils.data import DataLoader
+from torch.utils.data import DataLoader
 train_dataloader = DataLoader(training_data, batch_size=64, shuffle=True)
 test_dataloader = DataLoader(test_data, batch_size=64, shuffle=True)
 
 # DataLoaderを用いた繰り返し処理
-train_features, train_labels = next(iter(train_dataloader))
+train_features, train_labels = next(iter(train_dataloader)) # イテレータ：順番に回せるオブジェクトの正体．next：最初の1バッチを取り出す．
 print(f"Feature batch shape: {train_features.size()}")
 print(f"Labels batch shape: {train_labels.size()}")
 img = train_features[0].squeeze()
