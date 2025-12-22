@@ -45,8 +45,57 @@ for i in range(1, cols * rows + 1):
     figure.add_subplot(rows, cols, i)
     plt.title(labels_map[label])
     plt.axis("off")
-    plt.imshow(img.squeeze(), cmap="gray")
+    plt.imshow(img.squeeze(), cmap="gray") # img.squeeze()：Tensorの形状を[28, 28]に変換
 
 os.makedirs("img_fashion", exist_ok=True)
 plt.savefig("img_fashion/fashion_mnist.png")
+plt.close()
+
+# カスタムデータセットの作成
+# 必須関数__init__, __len__, __getitem__
+
+import pandas as pd
+from torchvision.io import read_image # 画像ファイルをTensorに変換して読み込む
+
+class CustomImageDataset(Dataset): # 独自のデータセットクラスを定義：from torch.utils.data import Datasetが必要，バッチ処理やシャッフルが可能になる．
+    def __init__(self, annotations_file, img_dir, transform=None, target_transform=None): # tranform：画像データをモデルが扱いやすい形に変換，target_transform：ラベルをモデルが扱いやすい形に変換．
+        self.img_labels = pd.read_csv(annotations_file) # self.img_labels.iloc[idx, 0]：i番目の画像名，self.img_labels.iloc[idx, 1]：i番目のラベルを取得できるようになる．
+        self.img_dir = img_dir
+        self.transform = transform
+        self.target_transform = target_transform
+    
+    def __len__(self):
+        return len(self.img_labels)
+    
+    def __getitem__(self, idx):
+        img_path = os.path.join(self.img_dir, self.img_labels.iloc[idx, 0])
+        image = read_image(img_path)
+        label = self.img_labels.iloc[idx, 1]
+        if self.transform:
+            image = self.transform(image)
+        if self.target_transform:
+            label = self.target_transform(label)
+        sample = {"image": image, "label": label} # DataLoaderでbatch["image"]としてアクセス可能．
+        return sample
+
+
+# 自作を使用するなら
+# custom_dataset = CustomImageDataset("labels.csv", "img_dir", transform=ToTensor())
+# custom_dataloader = DataLoader(custom_dataset, batch_size=64, shuffle=True)
+
+# DataLoaderの使用
+# from torch.utils.data import DataLoader
+train_dataloader = DataLoader(training_data, batch_size=64, shuffle=True)
+test_dataloader = DataLoader(test_data, batch_size=64, shuffle=True)
+
+# DataLoaderを用いた繰り返し処理
+train_features, train_labels = next(iter(train_dataloader))
+print(f"Feature batch shape: {train_features.size()}")
+print(f"Labels batch shape: {train_labels.size()}")
+img = train_features[0].squeeze()
+label = train_labels[0]
+plt.imshow(img, cmap="gray")
+print(f"Label: {label}")
+os.makedirs("img_fashion", exist_ok=True)
+plt.savefig("img_fashion/fashion_mnist_dataloader.png")
 plt.close()
