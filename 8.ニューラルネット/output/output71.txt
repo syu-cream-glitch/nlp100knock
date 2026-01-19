@@ -1,0 +1,8 @@
+before train dataset size: 67349
+before dev dataset size: 872
+after train dataset size: 67225
+after dev dataset size: 872
+train dataset example:
+{'text': 'hide new secretions from the parental units ', 'label': tensor([0.]), 'input_ids': tensor([  5784,     65, 113844,     17,     11,  15094,   1593])}
+dev dataset example:
+{'text': "it 's a charming and often affecting journey . ", 'label': tensor([1.]), 'input_ids': tensor([   15, 13258,   639,  5198,  3899])}
