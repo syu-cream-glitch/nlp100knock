@@ -10,7 +10,8 @@
 # img_fashionディレクトリはファイルサイズが大きいため、Git 管理対象外とする．
 **/img_fashion/
 
-# output71,output73,output76はファイルサイズが大きいため、Git 管理対象外とする．
+# output71,output73,output76,output78はファイルサイズが大きいため、Git 管理対象外とする．
 **/output71/
 **/output73/
 **/output76/
+**/output78/
