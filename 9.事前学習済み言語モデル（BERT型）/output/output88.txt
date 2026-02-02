@@ -1,0 +1,15 @@
+Sentence: The movie was full of incomprehensibilities.
+Predicted sentiment: negative
+
+Sentence: The movie was full of fun.
+Predicted sentiment: positive
+
+Sentence: The movie was full of excitement.
+Predicted sentiment: positive
+
+Sentence: The movie was full of crap.
+Predicted sentiment: negative
+
+Sentence: The movie was full of rubbish.
+Predicted sentiment: negative
+
