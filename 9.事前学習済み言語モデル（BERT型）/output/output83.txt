@@ -1,0 +1,6 @@
+sentence 1 → sentence 2: 0.9880610704421997
+sentence 1 → sentence 3: 0.9557662010192871
+sentence 1 → sentence 4: 0.947532594203949
+sentence 2 → sentence 3: 0.9541274905204773
+sentence 2 → sentence 4: 0.948663592338562
+sentence 3 → sentence 4: 0.9806932210922241
