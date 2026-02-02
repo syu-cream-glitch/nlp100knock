@@ -1,0 +1,3 @@
+batch inputs shape: torch.Size([4, 128])
+batch attention_mask shape: torch.Size([4, 128])
+batch labels shape: torch.Size([4])
