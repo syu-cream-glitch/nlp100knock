@@ -29,7 +29,7 @@ with torch.no_grad():
         # 手順4：ID列→モデル入力のテンソル変換
         inputs = tokenizer(sentence, return_tensors="pt")
 
-        # model(inputs_ids=inputs[input_ids], attention_mask=inputs[attention_mask])
+        # model(inputs_ids=inputs["input_ids"], attention_mask=inputs["attention_mask"])
         # 上記のコードを以下のように省略できる．
         outputs = model(**inputs)
 
