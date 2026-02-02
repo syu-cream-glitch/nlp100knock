@@ -3,6 +3,7 @@ import re
 import torch
 from transformers import AutoTokenizer, AutoModel
 import pandas as pd
+# 教科書曰くBatchEncodingでもできるっぽい．
 
 input_files = [
     "SST-2/train.tsv",
