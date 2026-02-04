@@ -133,23 +133,6 @@ trainer = Trainer(
 
 trainer.train()
 
-# --- ここに差し込む！ ---
-print("=== 検証セットの予測サンプル確認 ===")
-predictions = trainer.predict(dev_dataset)
-# 生の出力（Logits）を確認
-print("Logits (first 10):")
-print(predictions.predictions[:10]) 
-
-# クラス確定（0か1か）を確認
-predicted_classes = np.argmax(predictions.predictions, axis=1)
-print("Predicted Classes (first 10):")
-print(predicted_classes[:10])
-
-# 正解ラベルとの比較
-true_labels = predictions.label_ids
-print("True Labels (first 10):")
-print(true_labels[:10])
-
 # 検証セットでモデルを評価
 eval_metrics = trainer.evaluate()
 os.makedirs("output", exist_ok=True)
