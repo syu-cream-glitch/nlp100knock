@@ -32,10 +32,10 @@ input_ids = prompt["input_ids"]
 
 outputs = model.generate(
     input_ids=input_ids,
-    max_length=input_ids.shape[1] + 30,
+    max_length=input_ids.shape[1] + 70,
     do_sample=True,
     top_p=0.9,
-    temperature=0.8,
+    temperature=0.3,
     pad_token_id=tokenizer.eos_token_id
 )
 
