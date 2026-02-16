@@ -1,0 +1,15 @@
+Prompt:
+system
+You are a helpful assistant.
+user
+What do you call a sweet eaten after dinner?
+
+
+Generated response:
+system
+You are a helpful assistant.
+user
+What do you call a sweet eaten after dinner?
+
+
+The term for a sweet eaten after dinner is "dessert". Desserts are typically
