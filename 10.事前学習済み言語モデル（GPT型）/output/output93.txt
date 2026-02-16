@@ -1,0 +1,12 @@
+Sentence: The movie was full of surprises
+Perplexity: 89.45
+
+Sentence: The movies were full of surprises
+Perplexity: 164.89
+
+Sentence: The movie were full of surprises
+Perplexity: 324.11
+
+Sentence: The movies was full of surprises
+Perplexity: 388.45
+
