@@ -1,0 +1,34 @@
+Prompt: The movie was full of
+
+Method: greedy
+Token probabilities:
+Token: ' great'      Prob: 0.0231
+Token: ' moments'    Prob: 0.1881
+Token: ','           Prob: 0.3635
+Token: ' but'        Prob: 0.2225
+Token: ' the'        Prob: 0.1366
+Token: ' most'       Prob: 0.0803
+Token: ' memorable'  Prob: 0.3043
+Token: ' was'        Prob: 0.1798
+Token: ' when'       Prob: 0.2597
+Token: ' the'        Prob: 0.1062
+Token: ' characters'  Prob: 0.0181
+Token: ' were'       Prob: 0.0643
+Token: ' reunited'   Prob: 0.0375
+Token: '.'           Prob: 0.1360
+Token: '\n'          Prob: 0.1122
+Token: '\n'          Prob: 0.9967
+Token: 'The'         Prob: 0.0901
+Token: ' movie'      Prob: 0.0838
+Token: ' was'        Prob: 0.2405
+Token: ' full'       Prob: 0.4464
+Token: ' of'         Prob: 0.9985
+Token: ' great'      Prob: 0.9782
+Token: ' moments'    Prob: 0.9981
+Token: ','           Prob: 0.9879
+Token: ' but'        Prob: 0.9897
+
+Generated text:
+The movie was full of great moments, but the most memorable was when the characters were reunited.
+
+The movie was full of great moments, but
