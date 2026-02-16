@@ -1,0 +1,16 @@
+greedy: The movie was full of great moments, but the most memorable was when the characters were reunited.
+
+The movie was full of great moments, but
+
+sample_temp_0.7: The movie was full of references. There was the "Skeeter" character played by Jack Black, who was used in the movie's ending.
+
+sample_temp_1.2: The movie was full of a wonderful, heartfelt, heartwarming story of the real lives of thousands of soldiers and civilians who were captured in the invasion."
+
+top_k_50: The movie was full of action sequences in a lot of languages, including Portuguese, Spanish, French, Japanese, Thai, Russian and Chinese. So I
+
+top_p_0.9: The movie was full of such moments, and the characters did indeed do a tremendous job of keeping you invested and entertained. But the movie would be even
+
+beam_search: The movie was full of great moments, but it was also full of bad ones.
+
+The movie was full of great moments, but it was
+
