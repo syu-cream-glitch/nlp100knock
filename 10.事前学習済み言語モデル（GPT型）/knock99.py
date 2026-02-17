@@ -28,9 +28,9 @@ def create_grpo_dataset(sentences, labels):
 
 
 # 報酬関数
-def reward_func(prompts, generations):
+def reward_func(prompts, completions, **kwargs):
     rewards = []
-    for prompt, gen in zip(prompts, generations):
+    for prompt, gen in zip(prompts, completions):
         # prompt からラベルを取得
         if "Sentence:" in prompt:
             sentence = prompt.split("Sentence:")[1].split("\nAnswer:")[0].strip()
@@ -108,9 +108,9 @@ eval_dataset  = create_grpo_dataset(dev_sents, dev_labels)
 # GRPO設定
 grpo_config = GRPOConfig(
     output_dir="output/output99",
-    num_train_epochs=3,
+    num_train_epochs=1,
     per_device_train_batch_size=2,
-    per_device_eval_batch_size=2,
+    per_device_eval_batch_size=4,
     gradient_accumulation_steps=2,
     learning_rate=5e-7,
     logging_steps=10,
@@ -118,8 +118,7 @@ grpo_config = GRPOConfig(
     eval_strategy="epoch",
     bf16=torch.cuda.is_available(),
     remove_unused_columns=False,
-    reward_func=reward_func,
-    num_return_sequences=4,
+    num_generations=4, # 生成数を増やすことで報酬の多様性を確保（ただし時間がかかりすぎる）
 )
 
 trainer = GRPOTrainer(
@@ -127,7 +126,8 @@ trainer = GRPOTrainer(
     args=grpo_config,
     train_dataset=train_dataset,
     eval_dataset=eval_dataset,
-    tokenizer=tokenizer
+    processing_class=tokenizer,
+    reward_funcs=[reward_func]
 )
 
 # GRPO学習前のモデル精度を確認
